@@ -6,10 +6,14 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:18:15 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/14 16:23:06 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/18 11:50:13 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * The atoi() function converts the initial portion of the string pointed to
+ * by str to int representation.
+ */
 int	ft_atoi(const char *s)
 {
 	int		sign;
