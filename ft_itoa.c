@@ -6,10 +6,58 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:20:17 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 16:10:44 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:28:37 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdlib.h>
+
+static int	nbrlen(int n);
+
 char	*ft_itoa(int n)
 {
+	char	*str;
+	size_t	len;
+
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = nbrlen(n);
+	str = (char *)malloc(len + 1);
+	if (str == NULL)
+		return (NULL);
+	str[len] = '\0';
+	if (n < 0)
+	{
+		str[0] = '-';
+		n = -n;
+	}
+	while (n > 0)
+	{
+		str[--len] = (n % 10) + '0';
+		n /= 10;
+	}
+	if (str[0] == '\0')
+		str[0] = '0';
+	return (str);
+}
+
+static int	nbrlen(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n = -n;
+		len++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
