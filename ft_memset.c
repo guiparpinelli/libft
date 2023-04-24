@@ -6,9 +6,11 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:22:52 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/18 14:33:49 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:57:33 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 /*
  * The memset() function writes len bytes of value c (converted to an unsigned

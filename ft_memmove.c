@@ -6,7 +6,7 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:22:52 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/18 14:50:56 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:00:50 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	if (((unsigned char *)dest) == ((unsigned char *)src))
-	{
 		return (dest);
-	}
 	if (dest > src)
 	{
 		while (n > 0)
@@ -32,8 +30,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	else
-	{
 		ft_memcpy(dest, src, n);
-	}
 	return (dest);
 }

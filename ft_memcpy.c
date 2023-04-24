@@ -6,9 +6,11 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:22:52 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/18 14:35:48 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:57:22 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 /*
  * The memcpy() function copies n bytes from memory area src to memory area dst.

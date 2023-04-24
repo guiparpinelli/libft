@@ -6,34 +6,10 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:20:17 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/21 12:28:14 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:10:44 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
 char	*ft_itoa(int n)
 {
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * 2);
-	if (!str)
-		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
-	if (n < 0)
-	{
-		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
-	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
-	{
-		str[0] = n + '0';
-		str[1] = '\0';
-	}
-	return (str);
 }

@@ -6,9 +6,11 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:22:52 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/18 11:51:28 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:16:07 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
  * The isalnum() function tests for any character for which isalpha(3) or
@@ -17,6 +19,5 @@
  */
 int	ft_isalnum(int c)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0'
-			&& c <= '9'));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

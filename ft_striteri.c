@@ -6,7 +6,7 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:21:14 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/21 13:21:42 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:22:58 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	i = 0;
 	while (s[i])
-    {
-        f(i, &s[i]);
-        i++
-    }
+	{
+		f(i, &s[i]);
+		i++;
+	}
 	return ;
 }

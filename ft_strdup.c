@@ -6,7 +6,7 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:22:52 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/18 11:48:36 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:16:27 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,16 @@
 
 /*
  * The strdup() function allocates sufficient memory for a copy of the
- * string s1, does the copy, and returns a pointer to it.  The pointer may
+ * string s, does the copy, and returns a pointer to it.  The pointer may
  * subsequently be used as an argument to the function free(3).
  * If insufficient memory is available, NULL is returned.
  */
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *s)
 {
 	char	*result;
-	size_t	len;
 
-	len = ft_strlen(s1);
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (!result)
+	result = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (result == NULL)
 		return (NULL);
-	result[len] = '\0';
-	while (len >= 0)
-	{
-		result[len] = s1[len];
-		len--;
-	}
-	return (result);
+	return (ft_memcpy(result, s, ft_strlen(s)));
 }

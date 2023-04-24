@@ -6,9 +6,11 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:22:40 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/21 13:22:45 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:42:41 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {

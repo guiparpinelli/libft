@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 13:18:56 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 15:41:57 by gparpine         ###   ########.fr       */
+/*   Created: 2023/04/24 15:29:14 by gparpine          #+#    #+#             */
+/*   Updated: 2023/04/24 15:42:35 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t			len;
-	char			*result;
-	unsigned int	i;
-
-	if (!s || !f)
-		return (NULL);
-	len = 0;
-	while (s[len])
-		len++;
-	result = malloc(len + 1);
-	if (!result)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (n == -2147483648)
+		return (ft_putstr_fd("-2147483648", fd));
+	if (n < 0)
 	{
-		result[i] = f(i, s[i]);
-		i++;
+		ft_putchar_fd('-', fd);
+		n = (unsigned int)(n * -1);
 	}
-	result[len] = '\0';
-	return (result);
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd("0123456789"[n], fd);
 }
