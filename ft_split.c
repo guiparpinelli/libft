@@ -6,10 +6,11 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:52:41 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 17:58:47 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:40:46 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 int	count_words(char *str, char c)
@@ -33,10 +34,39 @@ int	count_words(char *str, char c)
 	return (num_words);
 }
 
+int	wordlen(const char *s, char c)
+{
+	int	len;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		num_words;
 	char	**words;
+	int		word_len;
+	int		i;
 
-	num_words = count_words(str);
+	if (s == NULL)
+		return (NULL);
+	num_words = count_words((char *)s, c);
+	words = malloc(sizeof(char *) * (num_words + 1));
+	if (!words)
+		return (NULL);
+	i = 0;
+	while (i < num_words)
+	{
+		while (*s == c)
+			s++;
+		word_len = wordlen(s, c);
+		words[i] = ft_substr(s, 0, word_len);
+		s += word_len;
+		i++;
+	}
+	words[num_words] = NULL;
+	return (words);
 }

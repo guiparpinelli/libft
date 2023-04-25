@@ -6,7 +6,7 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:20:17 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 17:28:37 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:14:59 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	else if (n == 0)
+		return (ft_strdup("0"));
 	len = nbrlen(n);
 	str = (char *)malloc(len + 1);
 	if (str == NULL)
@@ -37,8 +39,6 @@ char	*ft_itoa(int n)
 		str[--len] = (n % 10) + '0';
 		n /= 10;
 	}
-	if (str[0] == '\0')
-		str[0] = '0';
 	return (str);
 }
 
