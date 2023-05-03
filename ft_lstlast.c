@@ -6,12 +6,15 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 16:15:50 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/26 17:10:11 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:13:13 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ * Returns a pointer to the last node of the list 'lst'.
+ */
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*n;

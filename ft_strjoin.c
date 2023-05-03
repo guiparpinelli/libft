@@ -6,12 +6,17 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:08:39 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 15:12:00 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:52:53 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ * Concatenates two strings 's1' and 's2' into a new string.
+ * The new string is created with `ft_calloc` function, and the total length of
+ * 's1' and 's2' plus one for the terminating null character.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;

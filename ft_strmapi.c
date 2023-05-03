@@ -6,13 +6,18 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:18:56 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 15:41:57 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:05:36 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
+/*
+ * Applies the function 'f' to each character of the string 's' to create a new
+ * string. The new string is created using memory allocation with malloc
+ * function, and its size is determined by the length of 's'.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t			len;

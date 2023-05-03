@@ -6,12 +6,15 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:29:14 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/24 15:42:35 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:10:13 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ * Writes the integer 'n' to the file descriptor 'fd'.
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
