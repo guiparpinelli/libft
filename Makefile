@@ -6,7 +6,7 @@
 #    By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 20:47:04 by gparpine          #+#    #+#              #
-#    Updated: 2023/05/03 12:56:25 by gparpine         ###   ########.fr        #
+#    Updated: 2023/05/03 13:50:34 by gparpine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ NAME	= libft.a
 LIB		= ar rc
 RL		= ranlib
 RM		= rm -f
-CC		= gcc
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
