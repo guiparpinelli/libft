@@ -6,7 +6,7 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:29:14 by gparpine          #+#    #+#             */
-/*   Updated: 2023/05/03 11:10:13 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:46:59 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
  */
 void	ft_putnbr_fd(int n, int fd)
 {
+	char	c;
+
 	if (n == -2147483648)
 		return (ft_putstr_fd("-2147483648", fd));
 	if (n < 0)
@@ -25,10 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n = (unsigned int)(n * -1);
 	}
 	if (n > 9)
-	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd("0123456789"[n], fd);
+	c = (n % 10) + '0';
+	ft_putchar_fd(c, fd);
 }
