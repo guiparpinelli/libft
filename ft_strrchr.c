@@ -6,9 +6,11 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:22:52 by gparpine          #+#    #+#             */
-/*   Updated: 2023/04/18 14:22:23 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/04 09:32:51 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
  * The strrchr() function locates the last occurrence of c (converted to a
@@ -20,9 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = -1;
-	while (s[++i])
-		;
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (s[i] == (unsigned char)c)

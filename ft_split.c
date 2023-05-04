@@ -6,15 +6,15 @@
 /*   By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:52:41 by gparpine          #+#    #+#             */
-/*   Updated: 2023/05/03 11:01:52 by gparpine         ###   ########.fr       */
+/*   Updated: 2023/05/04 09:39:37 by gparpine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int		count_words(char *str, char c);
-int		wordlen(const char *s, char c);
+static int	count_words(char *str, char c);
+static int	wordlen(const char *s, char c);
 
 /*
  * Splits the string 's' into an array of substrings, using the character 'c' as
@@ -49,7 +49,7 @@ char	**ft_split(char const *s, char c)
 	return (words);
 }
 
-int	count_words(char *str, char c)
+static int	count_words(char *str, char c)
 {
 	int	num_words;
 	int	flag;
@@ -70,7 +70,7 @@ int	count_words(char *str, char c)
 	return (num_words);
 }
 
-int	wordlen(const char *s, char c)
+static int	wordlen(const char *s, char c)
 {
 	int	len;
 
