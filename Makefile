@@ -6,9 +6,11 @@
 #    By: gparpine <gparpine@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 20:47:04 by gparpine          #+#    #+#              #
-#    Updated: 2023/05/03 13:50:34 by gparpine         ###   ########.fr        #
+#    Updated: 2023/05/04 16:40:11 by gparpine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME	= libft.a
 
 SRCS	= ft_atoi.c				  \
 		  ft_bzero.c			  \
@@ -58,36 +60,40 @@ BONUS	= ft_lstadd_back.c		  \
 SRCS_O	= ${SRCS:.c=.o}
 BONUS_O = ${BONUS:.c=.o}
 OBJS	= ${SRCS_O} ${BONUS_O}
-NAME	= libft.a
-LIB		= ar rc
-RL		= ranlib
-RM		= rm -f
+
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -I*.h
+RM		= /bin/rm -f
+
+AR		= ar -rc
+RL		= ar -s
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I*.h
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${SRCS_O}
-		${LIB} ${NAME} ${SRCS_O}
-		${RL} ${NAME}
+	${AR} ${NAME} ${SRCS_O}
+	${RL} ${NAME}
 
 all: ${NAME}
 
 bonus: ${BONUS_O}
-		${LIB} ${NAME} ${BONUS_O}
-		${RL} ${NAME}
+	${AR} ${NAME} ${BONUS_O}
+	${RL} ${NAME}
 
 clean:
-		${RM} ${OBJS}
+	${RM} ${OBJS}
 
 fclean: clean
-		${RM} ${NAME}
+	${RM} ${NAME}
 
 re: fclean all
 
 norm:
-		norminette -R CheckForbiddenSourceHeader *.c
-		norminette -R CheckDefine *.h
+	norminette -R CheckForbiddenSourceHeader *.c
+	norminette -R CheckDefine *.h
+
+author:
+	echo 'gparpine'
 
 .PHONY: all re clean fclean norm bonus
